@@ -1,0 +1,403 @@
+<!-- 
+开源工作台：
+源码地址：https://github.com/openspug/index
+创建者: openspug组织@https://github.com/openspug
+创建时间：2019-05-26
+联系邮箱：yupozhang@gmail.com
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>广联系统导航</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      background-color: #F7F7F7;
+    }
+
+    .container {
+      background-color: #fff;
+
+    }
+
+    .container-header {
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: bold;
+      height: 40px;
+      padding-left: 10px;
+
+    }
+
+    .container-body {
+      display: flex;
+      border-top: 1px solid #dfdfdf;
+      padding: 20px 10px 0 10px;
+      /*justify-content: space-between;*/
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+
+    .container div {
+      display: flex;
+    }
+
+    .item-block {
+      border: 1px solid #dfdfdf;
+      flex-direction: column;
+      height: 160px;
+      width: 24%;
+      margin-bottom: 20px;
+      margin-right: 10px;
+
+    }
+
+    a:link {
+      /* 超链接正常状态下的样式 */
+      color: #000000;
+      /* 黑色 */
+      text-decoration: none;
+      /* 无下划线 */
+    }
+
+    a:visited {
+      /* 访问过的超链接 */
+      color: #000000;
+      /* 黑色 */
+      text-decoration: none;
+      /* 无下划线 */
+    }
+
+
+    .item-top {
+      height: 80px;
+      padding: 20px;
+    }
+
+    .item-logo {
+      width: 60px;
+      height: 60px;
+      margin-right: 20px;
+
+    }
+
+    .item-logo img {
+      width: 100%;
+      height: 100%;
+
+    }
+
+    .item-body {
+      flex-direction: column;
+    }
+
+    .item-bottom {
+      height: 40px;
+      justify-content: space-around;
+      align-items: center;
+      color: #888888;
+      background-color: #F7F7F7;
+      font-size: 13px;
+    }
+
+    .title {
+      font-size: 16px;
+      font-weight: bold;
+      padding-bottom: 10px;
+    }
+
+    .notice {
+      font-size: 12px;
+      color: #888;
+    }
+
+    .divider {
+      height: 20px;
+      width: 1px;
+      background-color: #dfdfdf;
+    }
+  </style>
+</head>
+
+
+<body style="padding: 10px">
+  <div class="container">
+    <div class="container-header">办公系统导航 <span style="width:20px"></span><select style="width:100px" id="ChangeWeb" onchange="ChangeOutside()">
+        <option value="内网环境">内网环境</option>
+        <option value="外网环境">外网环境</option>
+      </select></div>
+    <div class="container-body" id="DivInside1">
+
+      <div class="item-block">
+        <a href="http://www.shglgf.com/" target="_blank">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/glgf.png"></div>
+            <div class="item-body">
+              <span class="title">门户网站</span>
+              <span class="notice">广联门户网站</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.49:8090/C6" target="_blank" id="linkC6">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/jh.png"></div>
+            <div class="item-body">
+              <span class="title">OA系统</span>
+              <span class="notice">金和OA（C6）</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.17/" target="_blank" id="linkEdoc2">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/Edoc2.png"></div>
+            <div class="item-body">
+              <span class="title">Edoc2</span>
+              <span class="notice">文档系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://10.1.6.10:8089/" target="_blank" id="linkU8">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/U8Cloud.png"></div>
+            <div class="item-body">
+              <span class="title">U8Cloud</span>
+              <span class="notice">广联财务系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://10.1.12.110:8081/" target="_blank" id="linkYcjk">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/camare.jpg"></div>
+            <div class="item-body">
+              <span class="title">远程监控</span>
+              <span class="notice">广联远程监控系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+      
+      <div class="item-block">
+        <a href="http://192.168.1.20/" target="_blank" id="linkDxs">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/dxs.jpg"></div>
+            <div class="item-body">
+              <span class="title">地下水管理系统</span>
+              <span class="notice">广联地下水管理系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://mail.shglgf.com/" target="_blank" id="linkMail">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/mail.jpg"></div>
+            <div class="item-body">
+              <span class="title">企业邮箱</span>
+              <span class="notice">广联企业邮箱</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.12:8010" target="_blank" id="linkFw">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/fw.png"></div>
+            <div class="item-body">
+              <span class="title">新OA系统（调试中）</span>
+              <span class="notice">泛微OA</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+
+
+
+  <div class="container">
+    <div class="container-header">运维系统导航</div>
+    <div class="container-body">
+
+      <div class="item-block">
+        <a href="http://192.168.1.24" target="_blank" id="linkZabbix">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/zabbix.png"></div>
+            <div class="item-body">
+              <span class="title">Zabbix</span>
+              <span class="notice">Zabbix平台</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.22:10080/" target="_blank" id="lingGogs">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/gogs.png"></div>
+            <div class="item-body">
+              <span class="title">代码管理</span>
+              <span class="notice">广联代码管理</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="https://192.168.1.13/" target="_blank" id="linkVM">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/vm.jpg"></div>
+            <div class="item-body">
+              <span class="title">VM</span>
+              <span class="notice">云服务器控制台</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="https://192.168.1.103/" target="_blank" id="linkSangfor">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/sangfor.jpg"></div>
+            <div class="item-body">
+              <span class="title">云桌面控制台</span>
+              <span class="notice">广联云桌面系统控制台</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="https://10.0.0.1/" target="_blank" id="linkHuawei">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/huawei.jpg"></div>
+            <div class="item-body">
+              <span class="title">行为管理器</span>
+              <span class="notice">华为行为管理器</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <!--     <div class="item-block">
+      <div class="item-top">
+        <div class="item-logo"><img src="img/sky.png"></div>
+        <div class="item-body">
+          <span class="title">链路系统</span>
+          <span class="notice">Skywalking链路追踪系统</span>
+        </div>
+      </div>
+
+      <div class="item-bottom">
+        <div onclick="window.open('http://xxx/')">测试环境</div>
+        <div class="divider"></div>
+        <div onclick="window.open('http://xxx/')">正式环境</div>
+        <div class="divider"></div>
+        <div>帮助文档</div>
+      </div>
+    </div> 
+  
+  
+      <div class="item-block">
+        <a href="http://192.168.1.24" target="_blank">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/zabbix.png"></div>
+            <div class="item-body">
+              <span class="title">Zabbix</span>
+              <span class="notice">Zabbix平台</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <a href="https://github.com" target="_blank">
+            <div>源码地址</div>
+          </a>
+        </div>
+      </div>
+
+    -->
+
+
+    </div>
+  </div>
+</body>
+
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src='js/index.js'></script>
+<script type="text/javascript">
+  window.onload = function () {
+    init();
+  }
+
+</script>
+
+</html>
