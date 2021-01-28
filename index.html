@@ -1,138 +1,29 @@
 <!-- 
 开源工作台：
-源码地址：https://github.com/openspug/index
-创建者: openspug组织@https://github.com/openspug
-创建时间：2019-05-26
-联系邮箱：yupozhang@gmail.com
+创建时间：2020-05-14
+联系邮箱：zhurj0630@shglgf.com
 -->
 
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
   <meta charset="UTF-8">
   <title>广联系统导航</title>
-  <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      background-color: #F7F7F7;
-    }
-
-    .container {
-      background-color: #fff;
-
-    }
-
-    .container-header {
-      display: flex;
-      align-items: center;
-      font-size: 14px;
-      font-weight: bold;
-      height: 40px;
-      padding-left: 10px;
-
-    }
-
-    .container-body {
-      display: flex;
-      border-top: 1px solid #dfdfdf;
-      padding: 20px 10px 0 10px;
-      /*justify-content: space-between;*/
-      flex-direction: row;
-      flex-wrap: wrap;
-    }
-
-    .container div {
-      display: flex;
-    }
-
-    .item-block {
-      border: 1px solid #dfdfdf;
-      flex-direction: column;
-      height: 160px;
-      width: 24%;
-      margin-bottom: 20px;
-      margin-right: 10px;
-
-    }
-
-    a:link {
-      /* 超链接正常状态下的样式 */
-      color: #000000;
-      /* 黑色 */
-      text-decoration: none;
-      /* 无下划线 */
-    }
-
-    a:visited {
-      /* 访问过的超链接 */
-      color: #000000;
-      /* 黑色 */
-      text-decoration: none;
-      /* 无下划线 */
-    }
-
-
-    .item-top {
-      height: 80px;
-      padding: 20px;
-    }
-
-    .item-logo {
-      width: 60px;
-      height: 60px;
-      margin-right: 20px;
-
-    }
-
-    .item-logo img {
-      width: 100%;
-      height: 100%;
-
-    }
-
-    .item-body {
-      flex-direction: column;
-    }
-
-    .item-bottom {
-      height: 40px;
-      justify-content: space-around;
-      align-items: center;
-      color: #888888;
-      background-color: #F7F7F7;
-      font-size: 13px;
-    }
-
-    .title {
-      font-size: 16px;
-      font-weight: bold;
-      padding-bottom: 10px;
-    }
-
-    .notice {
-      font-size: 12px;
-      color: #888;
-    }
-
-    .divider {
-      height: 20px;
-      width: 1px;
-      background-color: #dfdfdf;
-    }
-  </style>
+  <link rel="stylesheet" type="text/css" href="class.css" />
 </head>
-
 
 <body style="padding: 10px">
   <div class="container">
-    <div class="container-header">办公系统导航 <span style="width:20px"></span><select style="width:100px" id="ChangeWeb" onchange="ChangeOutside()">
+    <div class="container-header">办公系统导航
+      <span style="width:20px"></span>环境选择：
+      <select style="width:100px" id="ChangeWeb" onchange="ChangeOutside()">
         <option value="内网环境">内网环境</option>
         <option value="外网环境">外网环境</option>
-      </select></div>
+      </select>
+      <span style="width:80px"></span>
+      <div>输入密码进入后台<input type="password" id="pwd" onkeydown="keyup_submit(event);"></input><button onclick="CheckPwd()">确定</button></div>
+    </div>
     <div class="container-body" id="DivInside1">
 
       <div class="item-block">
@@ -172,7 +63,7 @@
             <div class="item-logo"><img src="img/Edoc2.png"></div>
             <div class="item-body">
               <span class="title">Edoc2</span>
-              <span class="notice">文档系统</span>
+              <span class="notice">文档系统(VDrive)</span>
             </div>
           </div>
         </a>
@@ -211,7 +102,7 @@
           </a>
         </div>
       </div>
-      
+
       <div class="item-block">
         <a href="http://192.168.1.20/" target="_blank" id="linkDxs">
           <div class="item-top">
@@ -245,6 +136,54 @@
       </div>
 
       <div class="item-block">
+        <a href="https://work.shglgf.com:334" target="_blank" id="linkDesk">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/sangfor.jpg"></div>
+            <div class="item-body">
+              <span class="title">云桌面客户登录</span>
+              <span class="notice">广联云桌面</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.19:9336/gl" target="_blank" id="linkHrc">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/hcm.png"></div>
+            <div class="item-body">
+              <span class="title">HR系统</span>
+              <span class="notice">HR系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
+        <a href="http://192.168.1.29:8080/SHGL/admin/index.html" target="_blank" id="linkJc">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/jc.png"></div>
+            <div class="item-body">
+              <span class="title">监测监护系统</span>
+              <span class="notice">监测监护系统</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="item-block">
         <a href="http://192.168.1.12:8010" target="_blank" id="linkFw">
           <div class="item-top">
             <div class="item-logo"><img src="img/fw.png"></div>
@@ -266,7 +205,7 @@
 
 
 
-  <div class="container">
+  <div class="container" id="SystemDiv" style="display:none">
     <div class="container-header">运维系统导航</div>
     <div class="container-body">
 
@@ -286,7 +225,7 @@
       </div>
 
       <div class="item-block">
-        <a href="http://192.168.1.22:10080/" target="_blank" id="lingGogs">
+        <a href="http://work.shglgf.com:10080/" target="_blank" id="lingGogs">
           <div class="item-top">
             <div class="item-logo"><img src="img/gogs.png"></div>
             <div class="item-body">
@@ -301,7 +240,7 @@
       </div>
 
       <div class="item-block">
-        <a href="https://192.168.1.13/" target="_blank" id="linkVM">
+        <a href="https://192.168.1.28/" target="_blank" id="linkVM">
           <div class="item-top">
             <div class="item-logo"><img src="img/vm.jpg"></div>
             <div class="item-body">
@@ -333,12 +272,12 @@
       </div>
 
       <div class="item-block">
-        <a href="https://10.0.0.1/" target="_blank" id="linkHuawei">
+        <a href="http://192.168.1.9/" target="_blank" id="linkFtp">
           <div class="item-top">
-            <div class="item-logo"><img src="img/huawei.jpg"></div>
+            <div class="item-logo"><img src="img/ftp.jpg"></div>
             <div class="item-body">
-              <span class="title">行为管理器</span>
-              <span class="notice">华为行为管理器</span>
+              <span class="title">FTP管理平台</span>
+              <span class="notice">广联FTP管理平台</span>
             </div>
           </div>
         </a>
@@ -347,6 +286,42 @@
           </a>
         </div>
       </div>
+
+      <div class="item-block">
+        <a href="https://10.0.0.1/" target="_blank" id="linkHuawei">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/huawei.jpg"></div>
+            <div class="item-body">
+              <span class="title">华为路由器</span>
+              <span class="notice">华为路由器</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+
+
+
+      <!--
+      <div class="item-block">
+        <a href="http://192.168.1.22:8001/" target="_blank" id="linkSeafile">
+          <div class="item-top">
+            <div class="item-logo"><img src="img/seafile.jpg"></div>
+            <div class="item-body">
+              <span class="title">Seafile测试</span>
+              <span class="notice">Seafile测试服务器</span>
+            </div>
+          </div>
+        </a>
+        <div class="item-bottom">
+          <div></div>
+          </a>
+        </div>
+      </div>
+      -->
 
       <!--     <div class="item-block">
       <div class="item-top">
@@ -392,6 +367,7 @@
 </body>
 
 <script src="js/jquery-3.4.1.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
 <script src='js/index.js'></script>
 <script type="text/javascript">
   window.onload = function () {
