@@ -16,13 +16,19 @@
 <body style="padding: 10px">
   <div class="container">
     <div class="container-header">办公系统导航
-      <span style="width:20px"></span>环境选择：
-      <select style="width:100px" id="ChangeWeb" onchange="ChangeOutside()">
-        <option value="内网环境">内网环境</option>
-        <option value="外网环境">外网环境</option>
-      </select>
+      <div id="divSelWeb" style="display: none;">
+        <span style="width:20px"></span>环境选择：
+        <select style="width:100px" id="ChangeWeb" onchange="ChangeOutside()">
+          <option value="内网环境">内网环境</option>
+          <option value="外网环境">外网环境</option>
+        </select>
+      </div>
       <span style="width:80px"></span>
-      <div>输入密码进入后台<input type="password" id="pwd" onkeydown="keyup_submit(event);"></input><button onclick="CheckPwd()">确定</button></div>
+      <div>输入密码进入后台<input type="password" id="pwd" onkeydown="keyup_submit(event);"></input><button
+          onclick="CheckPwd()">确定</button></div>
+      <div id='testdiv' style="display:none">
+        <img src="http://192.168.1.22/img/AAA15CDD-D55B-4271-9E64-F359E234ECA6.png" onerror="warning()" />
+      </div>
     </div>
     <div class="container-body" id="DivInside1">
 

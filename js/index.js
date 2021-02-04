@@ -1,5 +1,22 @@
 function init() {
+    //$('#divSelWeb').hide();
+}
 
+function warning() {
+    //alert(1);
+    $('#ChangeWeb').val('外网环境');
+    ChangeOutside();
+}
+
+function fileExists(url) {
+    if (url) {
+        var req = new XMLHttpRequest();
+        req.open('GET', url, false);
+        req.send();
+        return req.status == 200;
+    } else {
+        return false;
+    }
 }
 
 function keyup_submit(e) {
