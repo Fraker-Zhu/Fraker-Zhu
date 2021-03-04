@@ -1,11 +1,18 @@
 function init() {
     //$('#divSelWeb').hide();
+    //$('#ChangeWeb').val('外网环境');
+    //ChangeOutside();
+}
+
+function IsInside() {
+    $('#ChangeWeb').val('内网环境');
+    ChangeOutside();
 }
 
 function warning() {
     //alert(1);
-    $('#ChangeWeb').val('外网环境');
-    ChangeOutside();
+    //$('#ChangeWeb').val('外网环境');
+    //ChangeOutside();
 }
 
 function fileExists(url) {
