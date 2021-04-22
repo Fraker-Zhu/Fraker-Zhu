@@ -1,10 +1,50 @@
 function init() {
+    $.ajax({
+        url: $("#a1").attr("href"),
+        type: 'GET',
+        complete: function (response) {
+            if (response.status == 200) {
+                alert('有效');
+            } else {
+                alert('无效');
+            }
+        }
+    });
+
+    /*
+        var url = 'http://192.168.1.22/index.html';
+    var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+    alert(xmlhttp);
+    xmlhttp.open("GET", url, false);
+    xmlhttp.send();
+
+    if (xmlhttp.readyState == 4) {
+        if (xmlhttp.Status != 200) alert("不存在");
+        else alert("存在");
+    }
+    
+    
+    var netStatue = false;
+    $(window).bind('load', function () {
+        netStatue = true;
+    });
+    //alert(netStatue);
+    if (netStatue) {
+        RealChange();
+    }
+    */
     //$('#divSelWeb').hide();
     //$('#ChangeWeb').val('外网环境');
     //ChangeOutside();
 }
 
 function IsInside() {
+    //setTimeout(RealChange, 1000);
+    RealChange();
+}
+
+function RealChange() {
+    //alert(1);
     $('#ChangeWeb').val('内网环境');
     ChangeOutside();
 }
