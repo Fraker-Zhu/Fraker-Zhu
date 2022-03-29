@@ -47,7 +47,7 @@
         </div>
       </div>
 
-      
+
       <div class="item-block">
         <a href="http://work.shglgf.com:8010" target="_blank" id="linkFw">
           <div class="item-top">
@@ -63,7 +63,7 @@
           </a>
         </div>
       </div>
-      
+
       <div class="item-block">
         <a href="http://work.shglgf.com:9336/gl" target="_blank" id="linkHrc">
           <div class="item-top">
@@ -402,15 +402,32 @@
     </div>
   </div>
   <div id='testdiv' style="display:none;">
-    <img src="http://192.168.1.22/img/AAA15CDD-D55B-4271-9E64-F359E234ECA6.png" onerror="warning()" onload="IsInside()" />
+    <img src="http://192.168.1.22/img/AAA15CDD-D55B-4271-9E64-F359E234ECA6.png" onerror="warning()"
+      onload="IsInside()" />
     <a id="a1" href="http://192.168.1.22/index.html" target="_blank">11</a>
   </div>
 </body>
 
-<script src="js/jquery-3.4.1.min.js"></script>
-<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
 <script src='js/index.js'></script>
+<script src="js/jquery-3.4.1.min.js"></script>
+<script src="js/production.min.js"></script>
+<script src="https://cdn.bootcss.com/blueimp-md5/2.10.0/js/md5.js"></script>
+
 <script type="text/javascript">
+  $.ajax({
+
+    url: 'http://192.168.1.33/index.html',//项目下的某张图片
+    type: 'GET',
+    complete: function (response) {
+      if (response.status == 200) {
+        alert(response.status);
+        //alert('succ');
+      } else {
+        alert(response.status);
+      }
+    }
+  });
+
   window.onload = function () {
     init();
   }

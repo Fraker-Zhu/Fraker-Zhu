@@ -4,38 +4,96 @@ function init() {
         type: 'GET',
         complete: function (response) {
             if (response.status == 200) {
-                alert('有效');
+                //alert('有效');
             } else {
-                alert('无效');
+                //alert('无效');
             }
         }
     });
+    //test();
 
-    /*
-        var url = 'http://192.168.1.22/index.html';
-    var xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-    alert(xmlhttp);
-    xmlhttp.open("GET", url, false);
-    xmlhttp.send();
+}
 
-    if (xmlhttp.readyState == 4) {
-        if (xmlhttp.Status != 200) alert("不存在");
-        else alert("存在");
+function SetCode(){
+    //alert($('#str').val());
+    //alert($.base64.encode($('#str').val()));
+    $('#val').val($.base64.encode($('#str').val()));
+}
+
+function SetVal(){
+    alert($.base64.decode($('#str').val()));
+}
+
+function getXhr() {
+    /****
+    var httpreq = null;
+    //由于涉及跨域问题，这里优先使用ActiveXObject
+    if (window.ActiveXObject) {
+        try {
+            httpreq = new ActiveXObject("Msxml2.XMLHTTP");
+        } catch (e) {
+            try {
+                httpreq = new ActiveXObject("Microsoft.XMLHTTP");
+            } catch (e) {
+            }
+        }
+    } else if (window.XMLHttpRequest) {
+        httpreq = new XMLHttpRequest();
     }
-    
-    
-    var netStatue = false;
-    $(window).bind('load', function () {
-        netStatue = true;
-    });
-    //alert(netStatue);
-    if (netStatue) {
-        RealChange();
-    }
+    return httpreq;
     */
-    //$('#divSelWeb').hide();
-    //$('#ChangeWeb').val('外网环境');
-    //ChangeOutside();
+
+    var HttpRequest = null;
+    try {
+        //if (window.XMLHttpRequest) { // Mozilla, Safari, ...
+        HttpRequest = new XMLHttpRequest();
+        //} else if (window.ActiveXObject) { // IE
+        //HttpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+        //}
+        if (HttpRequest.overrideMimeType) {
+            // set type accordingly to anticipated content type
+            if (type.toUpperCase() == "XML")
+                HttpRequest.overrideMimeType('text/xml');
+            else
+                HttpRequest.overrideMimeType('text/html');
+        }
+    } catch (e) {
+        //showWarnningMessage(errorText, e.message);
+    }
+    return HttpRequest;
+
+}
+
+function checkIsConnect(url) {
+    var xmlhttp = getXhr();
+    xmlhttp.open("GET", url, false);
+    try {
+        xmlhttp.send(null);
+    } catch (e) {
+        return false;
+    }
+    if (xmlhttp.readyState == 4) {
+        //readyStatud == 4 表示与服务端完成交互,即可以连接
+        return true;
+    }
+    return false;
+}
+
+function test() {
+    var urls = new Array("http://192.168.1.22/index.html");
+    var checkUrl = null;
+    for (var i = 0; i < urls.length; i++) {
+        if (checkIsConnect(urls[i] + "")) {
+            checkUrl = urls[i];
+            break;
+        }
+    }
+    if (checkUrl != null) {
+        //获取到可用服务器地址之后的逻辑处理
+        alert('success');
+    } else {
+        alert("IP检测无可连接的网络服务,请检查网络连接或确认服务端配置!服务端配置地址如下:" + urls);
+    }
 }
 
 function IsInside() {
