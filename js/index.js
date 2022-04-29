@@ -172,7 +172,7 @@ function ChangeOutside() {
         //$('#linkSangfor').attr('href','https://work.shglgf.com:8110');
 
         //华为行为管理器
-        $('#linkHuawei').attr('href', 'https://10.0.0.1');
+        $('#linkHuawei').attr('href', 'http://10.0.0.1');
 
         //SeafilePro
         $('#linkSeafile').attr('href', 'http://work.shglgf.com:7070');
@@ -203,7 +203,7 @@ function ChangeOutside() {
         $('#linkDesk').attr('href', 'https://work.shglgf.com:334');
 
         //监测监护
-        $('#linkJc').attr('href', 'http://192.168.1.29:8080//SHGL/admin/index.html');
+        $('#linkJc').attr('href', 'http://192.168.1.29:8080/SHGL/admin/index.html');
 
         //泛微OA
         $('#linkFw').attr('href', 'http://192.168.1.12:8010');
@@ -224,7 +224,7 @@ function ChangeOutside() {
         $('#linkHuawei').attr('href', 'https://10.0.0.1:8443/');
 
         //SeafilePro
-        $('#linkSeafile').attr('href', 'http://192.168.1.22:8001');
+        $('#linkSeafile').attr('href', 'http://192.168.1.22:8000');
 
         //FTP
         $('#linkFtp').attr('href', 'http://192.168.1.9');
