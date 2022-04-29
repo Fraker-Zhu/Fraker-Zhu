@@ -342,7 +342,7 @@
       </div>
 
       <div class="item-block">
-        <a href="http://192.168.1.22:8001/" target="_blank" id="linkSeafile">
+        <a href="http://192.168.1.22:8000" target="_blank" id="linkSeafile">
           <div class="item-top">
             <div class="item-logo"><img src="img/seafile.jpg"></div>
             <div class="item-body">
@@ -357,7 +357,8 @@
         </div>
       </div>
 
-      <!--     <div class="item-block">
+      <!--
+      <div class="item-block">
       <div class="item-top">
         <div class="item-logo"><img src="img/sky.png"></div>
         <div class="item-body">
@@ -411,22 +412,9 @@
 <script src="js/md5.js"></script>
 
 <script type="text/javascript">
-  $.ajax({
-
-    url: 'http://192.168.1.33/index.html',//项目下的某张图片
-    type: 'GET',
-    complete: function (response) {
-      if (response.status == 200) {
-        alert(response.status);
-        //alert('succ');
-      } else {
-        alert(response.status);
-      }
-    }
-  });
 
   window.onload = function () {
-    init();
+    //init();
   }
 
 </script>

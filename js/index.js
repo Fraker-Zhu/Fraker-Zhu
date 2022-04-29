@@ -1,4 +1,5 @@
 function init() {
+    /**
     $.ajax({
         url: $("#a1").attr("href"),
         type: 'GET',
@@ -10,6 +11,7 @@ function init() {
             }
         }
     });
+    */
     //test();
 
 }
