@@ -165,7 +165,7 @@ function ChangeOutside() {
         $('#linkZabbix').attr('href', 'http://work.shglgf.com:8110');
 
         //Gogs代码管理
-        $('#linkGogs').attr('href', 'http://work.shglgf.com:10080');
+        $('#linkGogs').attr('href', 'https://gitee.com/');
 
         //VM服务器后台
         //$('#linkVM').attr('href','https://work.shglgf.com:8110');
@@ -214,7 +214,7 @@ function ChangeOutside() {
         $('#linkZabbix').attr('href', 'http://192.168.1.24');
 
         //Gogs代码管理
-        $('#linkGogs').attr('href', 'http://192.168.1.22:10080');
+        $('#linkGogs').attr('href', 'https://gitee.com/');
 
         //VM服务器后台
         //$('#linkVM').attr('href','https://work.shglgf.com:8110');
@@ -223,7 +223,7 @@ function ChangeOutside() {
         //$('#linkSangfor').attr('href','https://work.shglgf.com:8110');
 
         //华为行为管理器
-        $('#linkHuawei').attr('href', 'https://10.0.0.1:8443/');
+        $('#linkHuawei').attr('href', 'http://10.0.0.1');
 
         //SeafilePro
         $('#linkSeafile').attr('href', 'http://192.168.1.22:8000');
